@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  # SQL and document data store
+  db:
+    image: postgres:9.6.2-alpine
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/run/postgresql
+    volumes:
+      - ./scripts/postgres-initdb.sh:/docker-entrypoint-initdb.d/initdb.sh
+    ports:
+     - "5432:5432"

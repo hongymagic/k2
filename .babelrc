@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "syntax-flow",
+    "transform-flow-strip-types"
+  ],
+  "presets": [
+    [
+      "env",
+      {
+        targets: {
+          node: true
+        }
+      }
+    ]
+  ]
+}

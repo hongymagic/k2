@@ -1,0 +1,50 @@
+{
+  "name": "k2",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">= 7.6"
+  },
+  "description": "Koa based API with JWT and GraphQL",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-register": "^6.24.1",
+    "bcrypt": "^1.0.2",
+    "dotenv": "^4.0.0",
+    "fancy-log": "^1.3.0",
+    "glob": "^7.1.2",
+    "jsonwebtoken": "^7.4.1",
+    "kcors": "^1.3.2",
+    "knex": "^0.13.0",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-logger": "^3.0.0",
+    "koa-passport": "^3.0.0",
+    "koa-router": "^7.2.0",
+    "passport-local": "^1.0.0",
+    "pg": "^6.2.2",
+    "ramda": "^0.23.0"
+  },
+  "scripts": {
+    "start": "node src/index",
+    "start:dev": "nodemon src/index",
+    "flow": "flow",
+    "knex": "knex",
+    "migrate:make": "knex migrate:make",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "seed:make": "knex seed:make",
+    "seed:run": "knex seed:run"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.46.0",
+    "nodemon": "^1.11.0"
+  }
+}
