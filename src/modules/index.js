@@ -3,13 +3,14 @@
 import glob from 'glob';
 import Router from 'koa-router';
 
-exports = (module.exports = function initModules(app) {
+exports = (module.exports = function initModules(app: any) {
   glob(`${__dirname}/*`, { ignore: '**/index.js' }, (err, matches) => {
     if (err) {
       throw err;
     }
 
     matches.forEach(mod => {
+      // $FlowIgnoreNextLine: yes we know what we're doing.
       const router = require(`${mod}/router`);
 
       const routes = router.default;

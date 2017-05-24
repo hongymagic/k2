@@ -20,10 +20,6 @@ const { nodeInterface, nodeField, nodesField } = nodeDefinitions(
       return require('./UserType').default;
     }
 
-    if (obj instanceof Article) {
-      return require('./ArticleType').default;
-    }
-
     return null;
   },
 );

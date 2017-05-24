@@ -47,4 +47,5 @@ app
   .use(router.routes())
   .use(router.allowedMethods());
 
-app.listen(process.env.PORT, () => log(`API server started on ${process.env.PORT}`));
+const port = process.env.PORT || 5000;
+app.listen(port, () => log(`API server started on ${port}`));
