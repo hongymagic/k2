@@ -51,7 +51,7 @@ class User {
     );
   }
 
-  static findOne(...args): Promise<User> {
+  static async findOne(...args): Promise<User> {
     return db
       .table('users')
       .where(...(args.length ? args : [{}]))
@@ -59,7 +59,7 @@ class User {
       .then(x => x && new User(x));
   }
 
-  static any(...args): boolean {
+  static async any(...args): Promise<boolean> {
     return db
       .raw(
         'SELECT EXISTS ?',
