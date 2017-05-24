@@ -24,13 +24,11 @@ passport.use(
       try {
         const user = await User.findOne({ email });
 
-        console.log(user);
-
         if (!user) {
           return done(null, false);
         }
 
-        done(null, user.verify(password) ? user : false);
+        done(null, await user.verify(password) ? user : false);
       } catch (err) {
         done(err);
       }

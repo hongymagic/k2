@@ -2,6 +2,7 @@
 
 import { compareSync } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
+import pick from 'ramda/src/pick';
 import db from '../db';
 
 const fields = [
@@ -16,15 +17,21 @@ class User {
   name: string;
 
   constructor(props: Object) {
-    Object.assign(this, props);
+    // Whitelist fields.
+    Object.assign(this, pick(fields, props));
   }
 
-  verify(password: string): boolean {
-    if (!this.password_hash) {
+  async verify(password: string): Promise<boolean> {
+    // Grab raw data from database to get access to other fields.
+    const user = await db.table('users')
+      .where({ email: this.email })
+      .first();
+
+    if (!user || !user.password_hash) {
       return false;
     }
 
-    return compareSync(password, this.password_hash);
+    return compareSync(password, user.password_hash);
   }
 
   token(): string {
