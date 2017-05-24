@@ -2,8 +2,8 @@ const bcrypt = require('bcrypt');
 
 const table = 'users';
 const users = [
-  { email: 'demo@cba.com.au',       name: 'John Doe',   password: 'P@55w0rd!' },
-  { email: 'david.hong@cba.com.au', name: 'David Hong', password: 'password' },
+  { email: 'john.doe@example.com', name: 'John Doe', password: 'johndoe' },
+  { email: 'jane.doe@example.com', name: 'Jane Doe', password: 'janedoe' },
 ];
 
 module.exports.seed = async (knex) => {
