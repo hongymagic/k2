@@ -64,5 +64,13 @@
     "lint-staged": "^3.4.2",
     "nodemon": "^1.11.0",
     "prettier": "^1.3.1"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/coverage",
+      "<rootDir>/flow-typed",
+      "<rootDir>/migrations",
+      "<rootDir>/seeds"
+    ]
   }
 }
