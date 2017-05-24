@@ -8,8 +8,6 @@ export default [
   {
     method: 'POST',
     route: '/',
-    handlers: [
-      auth.authenticate,
-    ]
-  }
-]
+    handlers: [auth.authenticate],
+  },
+];

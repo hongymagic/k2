@@ -3,7 +3,7 @@
 import glob from 'glob';
 import Router from 'koa-router';
 
-exports = (module.exports = function initModules(app: any) {
+exports = module.exports = function initModules(app: any) {
   glob(`${__dirname}/*`, { ignore: '**/index.js' }, (err, matches) => {
     if (err) {
       throw err;
@@ -18,11 +18,7 @@ exports = (module.exports = function initModules(app: any) {
       const instance = new Router({ prefix: baseUrl });
 
       routes.forEach(config => {
-        const {
-          method = '',
-          route = '',
-          handlers = [],
-        } = config;
+        const { method = '', route = '', handlers = [] } = config;
 
         const lastHandler = handlers.pop();
 
@@ -34,4 +30,4 @@ exports = (module.exports = function initModules(app: any) {
       });
     });
   });
-});
+};

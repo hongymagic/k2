@@ -5,7 +5,7 @@ import User from '../models/User';
 
 /* eslint-disable global-require */
 const { nodeInterface, nodeField, nodesField } = nodeDefinitions(
-  (globalId) => {
+  globalId => {
     const { type, id } = fromGlobalId(globalId);
 
     switch (type) {
@@ -15,13 +15,13 @@ const { nodeInterface, nodeField, nodesField } = nodeDefinitions(
         return null;
     }
   },
-  (obj) => {
+  obj => {
     if (obj instanceof User) {
       return require('./UserType').default;
     }
 
     return null;
-  },
+  }
 );
 
 export { nodeInterface, nodeField, nodesField };

@@ -5,11 +5,7 @@ import { sign } from 'jsonwebtoken';
 import pick from 'ramda/src/pick';
 import db from '../db';
 
-const fields = [
-  'id',
-  'email',
-  'name',
-];
+const fields = ['id', 'email', 'name'];
 
 class User {
   id: string;
@@ -23,9 +19,7 @@ class User {
 
   async verify(password: string): Promise<boolean> {
     // Grab raw data from database to get access to other fields.
-    const user = await db.table('users')
-      .where({ email: this.email })
-      .first();
+    const user = await db.table('users').where({ email: this.email }).first();
 
     if (!user || !user.password_hash) {
       return false;
@@ -36,41 +30,49 @@ class User {
 
   token(): string {
     return sign(this, process.env.APP_SECRET, {
-      expiresIn: 60 * 60 * 2 /* hours */
+      expiresIn: 60 * 60 * 2 /* hours */,
     });
   }
 
   static async find(...args) {
-    return db.table('users')
+    return db
+      .table('users')
       .where(...(args.length ? args : [{}]))
       .select(...fields)
       .then(rows => rows.map(x => new User(x)));
   }
 
   static async findByIds(ids: string[]): Promise<Array<User | Error>> {
-    return db.table('users')
-      .whereIn('id', ids)
-      .then(rows => ids.map((id) => {
+    return db.table('users').whereIn('id', ids).then(rows =>
+      ids.map(id => {
         const row = rows.find(x => x.id === id);
         return row && new User(row);
-      }));
+      })
+    );
   }
 
   static findOne(...args): Promise<User> {
-    return db.table('users')
+    return db
+      .table('users')
       .where(...(args.length ? args : [{}]))
       .first()
       .then(x => x && new User(x));
   }
 
   static any(...args): boolean {
-    return db.raw('SELECT EXISTS ?', db.table('users').where(...(args.length ? args : [{}])).select(db.raw('1')))
+    return db
+      .raw(
+        'SELECT EXISTS ?',
+        db
+          .table('users')
+          .where(...(args.length ? args : [{}]))
+          .select(db.raw('1'))
+      )
       .then(x => x.rows[0].exists);
   }
 
   static create(user) {
-    return db.table('users')
-      .insert(user, fields).then(x => new User(x[0]));
+    return db.table('users').insert(user, fields).then(x => new User(x[0]));
   }
 }
 

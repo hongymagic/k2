@@ -15,7 +15,5 @@ export default new GraphQLObjectType({
     },
   },
 
-  interfaces: [
-    nodeInterface,
-  ],
+  interfaces: [nodeInterface],
 });

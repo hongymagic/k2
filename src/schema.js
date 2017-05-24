@@ -1,7 +1,11 @@
 // @flow
 
 import { GraphQLSchema, GraphQLObjectType } from 'graphql';
-import { connectionArgs, connectionDefinitions, connectionFromPromisedArray } from 'graphql-relay';
+import {
+  connectionArgs,
+  connectionDefinitions,
+  connectionFromPromisedArray,
+} from 'graphql-relay';
 import { nodeField, nodesField } from './types/Node';
 import UserType from './types/UserType';
 

@@ -46,11 +46,23 @@
     "migrate:latest": "knex migrate:latest",
     "migrate:rollback": "knex migrate:rollback",
     "seed:make": "knex seed:make",
-    "seed:run": "knex seed:run"
+    "seed:run": "knex seed:run",
+    "precommit": "lint-staged",
+    "prepush": "yarn flow && CI=true yarn test -- --silent"
   },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --single-quote --trailing-comma es5 --write",
+      "git add"
+    ]
+  },
+
   "devDependencies": {
     "flow-bin": "^0.46.0",
+    "husky": "^0.13.3",
     "jest": "^20.0.3",
-    "nodemon": "^1.11.0"
+    "lint-staged": "^3.4.2",
+    "nodemon": "^1.11.0",
+    "prettier": "^1.3.1"
   }
 }

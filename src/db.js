@@ -21,16 +21,20 @@ const toSnakeCase = (cache => (key: string) => {
 // Automatically convert "camelCase" identifiers to "snake_case". For example:
 //   db.table('users').where('userId', '=', 1).update({ firstName: 'Bill' })
 //   => UPDATE "users" SET "first_name" = ? WHERE "user_id" = ?
-Client.prototype.wrapIdentifier = (value) => {
+Client.prototype.wrapIdentifier = value => {
   if (value === '*') return value;
   const matched = value.match(/(.*?)(\[[0-9]\])/);
-  if (matched) return Client.prototype.wrapIdentifier.wrapIdentifier(matched[1]) + matched[2];
+  if (matched)
+    return (
+      Client.prototype.wrapIdentifier.wrapIdentifier(matched[1]) + matched[2]
+    );
   return `"${toSnakeCase(value).replace(/"/g, '""')}"`;
 };
 
 // The above should not apply to the "as <name>" identifiers. For example:
 // db.table('users').select('user_id as userId') => SELECT "user_id" as "userId" from "users"
-Formatter.prototype.wrapAsIdentifier = value => `"${(value || '').replace(/"/g, '""')}"`;
+Formatter.prototype.wrapAsIdentifier = value =>
+  `"${(value || '').replace(/"/g, '""')}"`;
 
 const db = knex({
   client: Client,
