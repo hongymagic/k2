@@ -1,5 +1,7 @@
 # K2
 
+[![Build Status](https://travis-ci.org/hongymagic/k2.svg?branch=master)](https://travis-ci.org/hongymagic/k2) [![codecov](https://codecov.io/gh/hongymagic/k2/branch/master/graph/badge.svg)](https://codecov.io/gh/hongymagic/k2) ![Package dependencies](https://david-dm.org/hongymagic/k2.svg)
+
 Koa 2 and GraphQL server that _just works™_.
 
 ## Getting started
@@ -8,8 +10,7 @@ Make sure you have Docker installed as PostgreSQL is run on the docker
 container.
 
 ```
-git clone -o k2 -b master --single-branch \
-   https://github.com/hongymagic/k2.git example-api
+git clone -o k2 -b master --single-branch https://github.com/hongymagic/k2.git example-api
 cd example-api                  # Change current directory to the newly created one
 docker-compose up               # Launch all auxiliary services (i.e., PostgresSQL)
 cp .env.sample .env             # Configuration on development mode is done via dotenv

@@ -40,6 +40,7 @@
     "start": "node src/index",
     "start:dev": "nodemon src/index",
     "flow": "flow",
+    "test": "jest",
     "knex": "knex",
     "migrate:make": "knex migrate:make",
     "migrate:latest": "knex migrate:latest",
@@ -49,6 +50,7 @@
   },
   "devDependencies": {
     "flow-bin": "^0.46.0",
+    "jest": "^20.0.3",
     "nodemon": "^1.11.0"
   }
 }
