@@ -4,7 +4,8 @@
 
 [![Build Status](https://travis-ci.org/hongymagic/k2.svg?branch=master)](https://travis-ci.org/hongymagic/k2) [![codecov](https://codecov.io/gh/hongymagic/k2/branch/master/graph/badge.svg)](https://codecov.io/gh/hongymagic/k2) ![Package dependencies](https://david-dm.org/hongymagic/k2.svg)
 
-Koa 2 and GraphQL server that _just works™_.
+Koa 2 and GraphQL server that _just works™_. We've climbed the mountain of
+boilerplate for you, so you don't have to.
 
 ## Getting started
 
@@ -22,25 +23,65 @@ yarn seed:run                   # Add some seed data
 yarn start:dev                  # Start the server in development mode
 ```
 
-By default the API server starts on port 5000, http://localhost:5000
+By default the API server starts on port 5000, http://localhost:5000.
+
+## Structure
+
+```
+┌── .env.sample                 # Sample .env file loaded into process.env
+├── docker-compose.yml          # Auxiliary services such as postgresql via docker
+├── knexfile.js                 # Configuration for knex.js
+├── migrations/                 # Database migrations. See below for more info
+├── seeds/                      # Database seeds. See below for more info
+└── src/
+    ├── db.js                   # DB instance used by the app and/or models
+    ├── models/                 # ORM models written in ES6 classes
+    ├── modules/                # Route-Controller pair for koa2
+    │   ├── auth/               # Sample /authenticate module
+    │   ├── graphql/            # GraphQL
+    │   └── index.js            # Don't touch this
+    ├── passport.js             # Passport.js configuration using passport-local
+    ├── DataLoader.js           # Data fetching layer for GraphQL
+    ├── schema.js               # GraphQL schema
+    └── types/                  # GraphQL types
+```
 
 ## Testing
 
-TODO
+K2 uses [Facebook Jest](https://facebook.github.io/jest/) so you can add a
+directory named `__tests__` at any level and start writing tests.
 
-## Debugging
+```
+yarn test
+```
 
-TODO
+And to run coverage:
+
+```
+yarn test -- --coverage
+```
 
 ## Deployments
 
+This is a standard Node.js 7.6+ application. You can deploy it to anywhere you
+like including, but not limited to:
+
+- [now.sh](https://zeit.co/now)
+- [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
+- Pretty much anything that runs docker or Node.js
+
 ### Now.sh
+
+Deploying to now is super simple. Just run:
 
 ```
 now
 ```
 
-
 ### AWS ElasticBeanstalk
 
-- Database is already configured to prefer `RDS\_{HOSTNAME,DB_NAME,USERNAME,PASSWORD}` connection information
+Simply create a version of AWS EB with Node version 7.6.0 and deploy. I
+personally have travis CI deploy it via a `eb` script.
+
+- TODO: Sample `.ebextensions/`
+- Database is already configured to prefer `RDS_{HOSTNAME,DB_NAME,USERNAME,PASSWORD}` connection information
