@@ -6,11 +6,8 @@ import convert from 'koa-convert';
 import logger from 'koa-logger';
 import cors from 'kcors';
 import bodyParser from 'koa-bodyparser';
-import graphqlHTTP from 'koa-graphql';
-import { printSchema } from 'graphql';
 import log from 'fancy-log';
 import passport from './passport';
-import schema from './schema';
 
 const app = new Koa();
 
@@ -22,25 +19,6 @@ app.use(passport.initialize());
 // Custom API modules that define their own routes.
 const modules = require('./modules');
 modules(app);
-
-// GraphQL API.
-const router = new Router();
-
-router.get('/graphql/schema', ctx => {
-  ctx.type = 'text/plain';
-  ctx.body = printSchema(schema);
-});
-
-router.all(
-  '/graphql',
-  graphqlHTTP({
-    schema,
-    graphiql: process.env.NODE_ENV !== 'production',
-    pretty: process.env.NODE_ENV !== 'production',
-  })
-);
-
-app.use(router.routes()).use(router.allowedMethods());
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => log(`API server started on ${port}`));
