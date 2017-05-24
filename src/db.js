@@ -3,6 +3,10 @@
 import knex from 'knex';
 import Client from 'knex/lib/dialects/postgres';
 import Formatter from 'knex/lib/formatter';
+import knexConfig from '../knexfile';
+
+// Pull database connection configuration from knexfile.
+const { connection } = knexConfig;
 
 // Converts "camelCase" strings to "snake_case"
 const toSnakeCase = (cache => (key: string) => {
@@ -30,12 +34,7 @@ Formatter.prototype.wrapAsIdentifier = value => `"${(value || '').replace(/"/g, 
 
 const db = knex({
   client: Client,
-  connection: {
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-  },
+  connection,
   migrations: {
     tableName: 'migrations',
   },

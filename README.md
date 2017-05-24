@@ -32,3 +32,6 @@ TODO
 ## Deployments
 
 TODO
+### AWS ElasticBeanstalk
+
+- Database is already configured to read RDS_* connection information
