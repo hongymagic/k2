@@ -15,8 +15,5 @@ export async function authenticate(ctx: any, next: any) {
     }
 
     ctx.body = user.token();
-    if (next) {
-      next();
-    }
   })(ctx, next);
 }
