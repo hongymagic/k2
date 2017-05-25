@@ -44,12 +44,16 @@ By default the API server starts on port 5000, http://localhost:5000.
     ├── DataLoader.js           # Data fetching layer for GraphQL
     ├── schema.js               # GraphQL schema
     └── types/                  # GraphQL types
+└── tests/                      # Integration tests using supertest.
 ```
 
 ## Testing
 
 K2 uses [Facebook Jest](https://facebook.github.io/jest/) so you can add a
 directory named `__tests__` at any level and start writing tests.
+
+Root level `tests` directory is reserved for integration tests using supertest.
+Currently requires you to run the database server via docker-compose: see above.
 
 ```
 yarn test
