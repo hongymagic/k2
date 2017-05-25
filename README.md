@@ -7,6 +7,18 @@
 Koa 2 and GraphQL server that _just works™_. We've climbed the mountain of
 boilerplate for you, so you don't have to.
 
+## Included…
+
+- [koa2](http://koajs.com) - write stuff in middleware
+- [babel](http://babeljs.io) - use latest ES6/7 features today. why wait?
+- [passport.js](http://passportjs.org) - easy authentication
+- [knex.js](http://knexjs.org) - documentation is better than sequelize
+- [GraphQL](http://graphql.org) - it's the way to go
+- [Jest](https://facebook.github.io/jest/) - don't let tests get in your way
+- [ramda](http://ramdajs.com) - please don't use lodash or underscore
+- [prettier](https://prettier.github.io/prettier/) - don't worry about formatting…
+- [flowtype](https://flow.org) - get your types right
+
 ## Getting started
 
 Make sure you have Docker installed as PostgreSQL is run on the docker
@@ -33,6 +45,7 @@ By default the API server starts on port 5000, http://localhost:5000.
 ├── knexfile.js                 # Configuration for knex.js
 ├── migrations/                 # Database migrations. See below for more info
 ├── seeds/                      # Database seeds. See below for more info
+├── tests/                      # Integration tests using supertest.
 └── src/
     ├── db.js                   # DB instance used by the app and/or models
     ├── models/                 # ORM models written in ES6 classes
@@ -44,8 +57,9 @@ By default the API server starts on port 5000, http://localhost:5000.
     ├── DataLoader.js           # Data fetching layer for GraphQL
     ├── schema.js               # GraphQL schema
     └── types/                  # GraphQL types
-└── tests/                      # Integration tests using supertest.
 ```
+
+- TODO: Write more about modules and why this uses JWT.
 
 ## Testing
 
