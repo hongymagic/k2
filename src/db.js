@@ -42,11 +42,12 @@ const config: Object = {
     : 1000,
   pool: process.env.NODE_ENV === 'production'
     ? { min: 2, max: 10 }
-    : { min: 0, max: 0 },
+    : { min: 0, max: 1 },
   debug: process.env.DATABASE_DEBUG === 'true',
 };
 const db = knex(
   Object.assign(
+    {},
     {
       client: Client,
       connection,
