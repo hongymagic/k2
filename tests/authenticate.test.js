@@ -6,7 +6,7 @@ import { setupDatabase } from './utils';
 
 const check = done => (err, res) => (err ? done.fail(err) : done());
 
-beforeAll(() => setupDatabase());
+beforeAll(setupDatabase);
 
 describe('POST /authenticate', () => {
   test('should throw 401 is credentials are incorrect', done => {
