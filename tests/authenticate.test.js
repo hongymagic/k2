@@ -2,9 +2,11 @@
 
 import request from 'supertest';
 import server from '../src/server';
-import db from '../src/db';
+import { setupDatabase } from './utils';
 
 const check = done => (err, res) => (err ? done.fail(err) : done());
+
+beforeAll(() => setupDatabase());
 
 describe('POST /authenticate', () => {
   test('should throw 401 is credentials are incorrect', done => {

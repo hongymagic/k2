@@ -1,5 +1,6 @@
 // @flow
 
+import validateUser from '../../middleware/validate-user';
 import * as graphql from './controller';
 
 export const baseUrl = '/graphql';
@@ -8,14 +9,11 @@ export default [
   {
     method: 'ALL',
     route: '/',
-    handlers: [
-      // TODO: Add user validation.
-      graphql.http,
-    ],
+    handlers: [validateUser, graphql.http],
   },
   {
     method: 'GET',
     route: '/schema',
-    handlers: [graphql.print],
+    handlers: [validateUser, graphql.print],
   },
 ];

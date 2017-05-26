@@ -5,9 +5,6 @@ import Client from 'knex/lib/dialects/postgres';
 import Formatter from 'knex/lib/formatter';
 import knexConfig from '../knexfile';
 
-// Pull database connection configuration from knexfile.
-const { connection } = knexConfig;
-
 // Converts "camelCase" strings to "snake_case"
 const toSnakeCase = (cache => (key: string) => {
   let snakeCaseKey = cache.get(key);
@@ -46,17 +43,9 @@ const config: Object = {
   debug: process.env.DATABASE_DEBUG === 'true',
 };
 const db = knex(
-  Object.assign(
-    {},
-    {
-      client: Client,
-      connection,
-      migrations: {
-        tableName: 'migrations',
-      },
-    },
-    config
-  )
+  Object.assign({}, knexConfig, config, {
+    client: Client,
+  })
 );
 
 export default db;

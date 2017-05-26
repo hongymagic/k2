@@ -45,10 +45,11 @@ By default the API server starts on port 5000, http://localhost:5000.
 ├── knexfile.js                 # Configuration for knex.js
 ├── migrations/                 # Database migrations. See below for more info
 ├── seeds/                      # Database seeds. See below for more info
-├── tests/                      # Integration tests using supertest.
+├── tests/                      # Integration tests using supertest
 └── src/
     ├── db.js                   # DB instance used by the app and/or models
     ├── models/                 # ORM models written in ES6 classes
+    ├── middleware/             # Custom middleware to be used by modules
     ├── modules/                # Route-Controller pair for koa2
     │   ├── auth/               # Sample /authenticate module
     │   ├── graphql/            # GraphQL

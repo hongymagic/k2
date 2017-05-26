@@ -8,4 +8,7 @@ module.exports = {
     user: process.env.RDS_USERNAME || process.env.DB_USERNAME || 'postgres',
     password: process.env.RDS_PASSWORD || process.env.DB_PASSWORD || '',
   },
+  migrations: {
+    tableName: 'migrations',
+  },
 };
