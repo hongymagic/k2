@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - '7.6'
+services:
+  - postgresql
 addons:
   postgresql: "9.6"
   apt:
