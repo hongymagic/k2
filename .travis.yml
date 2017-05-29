@@ -20,5 +20,6 @@ before_script:
   - psql -c 'create database test;' -U postgres
   - cp .env.sample .env
 script:
+  - sleep 10
   - yarn test -- --coverage
   - codecov
