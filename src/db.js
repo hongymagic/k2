@@ -34,9 +34,7 @@ Formatter.prototype.wrapAsIdentifier = value =>
   `"${(value || '').replace(/"/g, '""')}"`;
 
 const config: Object = {
-  acquireConnectionTimeout: process.env.NODE_ENV === 'production'
-    ? 60000
-    : 1000,
+  acquireConnectionTimeout: 60000,
   pool: process.env.NODE_ENV === 'production'
     ? { min: 2, max: 10 }
     : { min: 0, max: 1 },
