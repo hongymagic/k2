@@ -23,5 +23,5 @@ before_script:
   - yarn migrate:latest
 script:
   - sleep 10
-  - yarn test -- --coverage
+  - yarn test:coverage
   - codecov

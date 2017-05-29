@@ -42,6 +42,7 @@
     "start:dev": "nodemon src/index",
     "flow": "flow",
     "test": "jest --forceExit",
+    "test:coverage": "jest --forceExit --runInBand --coverage",
     "knex": "knex",
     "migrate:make": "knex migrate:make",
     "migrate:latest": "knex migrate:latest",
@@ -49,7 +50,7 @@
     "seed:make": "knex seed:make",
     "seed:run": "knex seed:run",
     "precommit": "lint-staged",
-    "prepush": "yarn flow && CI=true yarn test -- --silent"
+    "prepush": "yarn flow && CI=true yarn test:coverage"
   },
   "lint-staged": {
     "{src,tests}/**/*.js": [
