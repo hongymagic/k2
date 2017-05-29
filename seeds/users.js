@@ -8,8 +8,9 @@ const users = [
 
 module.exports.seed = async (knex) => {
   // Deletes ALL existing entries
-  await knex(table).truncate();
-  await knex(table).insert(
+  const rows = await knex(table).del();
+  console.log(`${rows} deleted from ${table}`);
+  return knex(table).insert(
     users.map(
       ({ name, email, password }) => ({
         name,
