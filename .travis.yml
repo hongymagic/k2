@@ -19,6 +19,8 @@ install:
 before_script:
   - psql -c 'create database test;' -U postgres
   - cp .env.sample .env
+  - sleep 10
+  - yarn migrate:latest
 script:
   - sleep 10
   - yarn test -- --coverage
