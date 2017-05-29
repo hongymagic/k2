@@ -71,13 +71,10 @@ Root level `tests` directory is reserved for integration tests using supertest.
 Currently requires you to run the database server via docker-compose: see above.
 
 ```
-yarn test
-```
-
-And to run coverage:
-
-```
-yarn test -- --coverage
+yarn test                 # Run all tests including unit and integration tests
+yarn test:unit            # Only run unit tests inside src/ directory
+yarn test:integration     # Only run integration tests inside tests/ directory
+yarn test:coverage        # Generate coverage report. Also travis default
 ```
 
 ## Deployments
