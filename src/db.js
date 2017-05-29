@@ -37,7 +37,7 @@ const config: Object = {
   acquireConnectionTimeout: 60000,
   pool: process.env.NODE_ENV === 'production'
     ? { min: 2, max: 10 }
-    : { min: 0, max: 1 },
+    : { min: 2, max: 10 },
   debug: process.env.DATABASE_DEBUG === 'true',
 };
 const db = knex(
