@@ -35,7 +35,7 @@
     "koa-router": "^7.2.0",
     "passport-local": "^1.0.0",
     "pg": "^6.2.3",
-    "ramda": "^0.23.0"
+    "ramda": "^0.24.0"
   },
   "scripts": {
     "start": "node src/index",
@@ -61,7 +61,7 @@
   "devDependencies": {
     "babel-jest": "^20.0.3",
     "flow-bin": "^0.47.0",
-    "husky": "^0.13.3",
+    "husky": "^0.13.4",
     "jest": "^20.0.4",
     "lint-staged": "^3.5.0",
     "nodemon": "^1.11.0",
