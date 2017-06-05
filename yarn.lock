@@ -2236,11 +2236,9 @@ jws@^3.1.4:
     jwa "^1.1.4"
     safe-buffer "^5.0.1"
 
-kcors@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/kcors/-/kcors-1.3.2.tgz#8843ff14d86bfc2cfb5c2664e6809176b38dbd0d"
-  dependencies:
-    copy-to "^2.0.1"
+kcors@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/kcors/-/kcors-2.2.1.tgz#7160a94f2eae633436d2cef8eadd0ce232386779"
 
 keygrip@~1.0.1:
   version "1.0.1"
