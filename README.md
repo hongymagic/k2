@@ -2,7 +2,7 @@
 
 # K2
 
-[![Build Status](https://travis-ci.org/hongymagic/k2.svg?branch=master)](https://travis-ci.org/hongymagic/k2) [![codecov](https://codecov.io/gh/hongymagic/k2/branch/master/graph/badge.svg)](https://codecov.io/gh/hongymagic/k2) ![Package dependencies](https://david-dm.org/hongymagic/k2.svg)
+[![Build Status](https://travis-ci.org/hongymagic/k2.svg?branch=master)](https://travis-ci.org/hongymagic/k2) [![codecov](https://codecov.io/gh/hongymagic/k2/branch/master/graph/badge.svg)](https://codecov.io/gh/hongymagic/k2) ![Package dependencies](https://david-dm.org/hongymagic/k2.svg) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b01ca9655eb54672910339f7f653ad93)](https://www.codacy.com/app/hongymagic-github/k2?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hongymagic/k2&amp;utm_campaign=Badge_Grade)
 
 Koa 2 and GraphQL server that _just works™_. We've climbed the mountain of
 boilerplate for you, so you don't have to.
