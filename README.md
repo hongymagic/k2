@@ -28,6 +28,7 @@ container.
 git clone -o k2 -b master --single-branch https://github.com/hongymagic/k2.git example-api
 
 cd example-api                  # Change current directory to the newly created one
+yarn install                    # Install required packages via yarn
 docker-compose up               # Launch all auxiliary services (i.e., PostgresSQL)
 cp .env.sample .env             # Configuration on development mode is done via dotenv
 yarn migrate:latest             # Run database migrations
