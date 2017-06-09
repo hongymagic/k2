@@ -1,5 +1,5 @@
-// flow-typed signature: 26dadb20fd4d4f339a77cedda2cbb044
-// flow-typed version: 21d851f60a/koa_v2.x.x/flow_>=v0.47.x
+// flow-typed signature: 846c003f881e5aba2c7c39e3edf8ce31
+// flow-typed version: 47f1640404/koa_v2.x.x/flow_>=v0.47.x
 
 /*
  * Type def from from source code of koa.
@@ -207,7 +207,7 @@ declare module 'koa' {
     overwrite: boolean, //  whether to overwrite previously set cookies of the same name (false by default).
   };
   declare type Cookies = {
-    get: (name: string, options: {signed: boolean}) => string|void,
+    get: (name: string, options?: {signed: boolean}) => string|void,
     set: ((name: string, value: string, options?: CookiesSetOptions) => Context)&
     // delete cookie (an outbound header with an expired date is used.)
     ( (name: string) => Context),
