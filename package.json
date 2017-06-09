@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">= 7.6"
+    "node": ">= 8"
   },
   "description": "Koa based API with JWT and GraphQL",
   "main": "src/index.js",
@@ -78,5 +78,10 @@
       "<rootDir>/seeds"
     ],
     "testEnvironment": "node"
+  },
+  "now": {
+    "engines": {
+      "node": "8.x.x"
+    }
   }
 }
