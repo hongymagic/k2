@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const uuid = require('uuid');
 
 const table = 'users';
 const users = [
@@ -13,8 +14,10 @@ module.exports.seed = async (knex) => {
   return knex(table).insert(
     users.map(
       ({ name, email, password }) => ({
+        id: uuid(),
         name,
         email,
+        email_confirmed: true,
         password_hash: bcrypt.hashSync(password, 10),
         email_confirmed: true,
       })

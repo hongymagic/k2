@@ -34,17 +34,18 @@
     "koa-passport": "^3.0.0",
     "koa-router": "^7.2.0",
     "passport-local": "^1.0.0",
-    "pg": "^6.2.3",
-    "ramda": "^0.24.1"
+    "ramda": "^0.24.1",
+    "sqlite3": "^3.1.8",
+    "uuid": "^3.0.1"
   },
   "scripts": {
     "start": "node src/index",
     "start:dev": "nodemon src/index",
     "flow": "flow",
-    "test:unit": "jest --forceExit src/",
-    "test:integration": "jest --forceExit --runInBand tests/",
-    "test": "jest --forceExit --runInBand",
-    "test:coverage": "jest --forceExit --runInBand --coverage",
+    "test:unit": "jest src/",
+    "test:integration": "jest --runInBand --forceExit tests/",
+    "test": "jest --runInBand --forceExit ",
+    "test:coverage": "jest --runInBand --forceExit --coverage",
     "knex": "knex",
     "migrate:make": "knex migrate:make",
     "migrate:latest": "knex migrate:latest",
@@ -52,7 +53,8 @@
     "seed:make": "knex seed:make",
     "seed:run": "knex seed:run",
     "precommit": "lint-staged",
-    "prepush": "yarn flow && CI=true yarn test:coverage"
+    "prepush": "yarn flow && CI=true yarn test:coverage",
+    "now-build": "npm run migrate:latest"
   },
   "lint-staged": {
     "{src,tests}/**/*.js": [

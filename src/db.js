@@ -1,7 +1,7 @@
 // @flow
 
 import knex from 'knex';
-import Client from 'knex/lib/dialects/postgres';
+import Client from 'knex/lib/dialects/sqlite3';
 import Formatter from 'knex/lib/formatter';
 import knexConfig from '../knexfile';
 
@@ -35,9 +35,6 @@ Formatter.prototype.wrapAsIdentifier = value =>
 
 const config: Object = {
   acquireConnectionTimeout: 60000,
-  pool: process.env.NODE_ENV === 'production'
-    ? { min: 2, max: 10 }
-    : { min: 2, max: 10 },
   debug: process.env.DATABASE_DEBUG === 'true',
 };
 const db = knex(
