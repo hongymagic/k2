@@ -29,7 +29,6 @@ git clone -o k2 -b master --single-branch https://github.com/hongymagic/k2.git e
 
 cd example-api                  # Change current directory to the newly created one
 yarn install                    # Install required packages via yarn
-docker-compose up -d            # Launch all auxiliary services in daemon mode (i.e., PostgresSQL)
 cp .env.sample .env             # Configuration on development mode is done via dotenv
 yarn migrate:latest             # Run database migrations
 yarn seed:run                   # Add some seed data
@@ -47,6 +46,7 @@ By default the API server starts on port 5000, http://localhost:5000.
 ├── migrations/                 # Database migrations. See below for more info
 ├── seeds/                      # Database seeds. See below for more info
 ├── tests/                      # Integration tests using supertest
+├── sqlite3/                    # SQLite3 database location
 └── src/
     ├── db.js                   # DB instance used by the app and/or models
     ├── models/                 # ORM models written in ES6 classes
@@ -60,8 +60,6 @@ By default the API server starts on port 5000, http://localhost:5000.
     ├── schema.js               # GraphQL schema
     └── types/                  # GraphQL types
 ```
-
-- TODO: Write more about modules and why this uses JWT.
 
 ## Testing
 
@@ -80,8 +78,8 @@ yarn test:coverage        # Generate coverage report. Also travis default
 
 ## Deployments
 
-This is a standard Node.js 7.6+ application. You can deploy it to anywhere you
-like including, but not limited to:
+This is a standard Node.js version 8.0+ application. You can deploy it to
+anywhere you like including, but not limited to:
 
 - [now.sh](https://zeit.co/now)
 - [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
@@ -89,7 +87,7 @@ like including, but not limited to:
 
 ### Now.sh
 
-Deploying to now is super simple. Just run:
+Deploying to now is super simple if you're using SQLite3 (default). Just run:
 
 ```
 now
@@ -97,7 +95,7 @@ now
 
 ### AWS ElasticBeanstalk
 
-Simply create a version of AWS EB with Node version 7.6.0 and deploy. I
+Simply create a version of AWS EB with Node version 8.0.1 and deploy. I
 personally have travis CI deploy it via a `eb` script.
 
 - TODO: Sample `.ebextensions/`
