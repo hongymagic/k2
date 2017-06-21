@@ -25,7 +25,7 @@
     "jsonwebtoken": "^7.4.1",
     "kcors": "^2.2.1",
     "knex": "^0.13.0",
-    "koa": "^2.2.0",
+    "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
     "koa-convert": "^1.2.0",
     "koa-graphql": "^0.7.0",
