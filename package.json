@@ -65,7 +65,7 @@
   "devDependencies": {
     "babel-jest": "^20.0.3",
     "flow-bin": "^0.48.0",
-    "husky": "^0.13.4",
+    "husky": "^0.14.2",
     "jest": "^20.0.4",
     "lint-staged": "^3.6.1",
     "nodemon": "^1.11.0",
