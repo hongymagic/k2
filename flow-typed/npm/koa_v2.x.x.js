@@ -1,5 +1,5 @@
-// flow-typed signature: 846c003f881e5aba2c7c39e3edf8ce31
-// flow-typed version: 47f1640404/koa_v2.x.x/flow_>=v0.47.x
+// flow-typed signature: 70235df2192cd868462f3194d0e3229f
+// flow-typed version: c22e89bf0c/koa_v2.x.x/flow_>=v0.47.x
 
 /*
  * Type def from from source code of koa.
@@ -286,7 +286,7 @@ declare module 'koa' {
     ips: $PropertyType<Request, 'ips'>,
     ip: $PropertyType<Request, 'ip'>,
 
-    [key: string]: mixed, // props added by middlewares.
+    [key: string]: any, // props added by middlewares.
   }
 
   declare type Middleware =
