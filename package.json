@@ -36,7 +36,8 @@
     "passport-local": "^1.0.0",
     "ramda": "^0.24.1",
     "sqlite3": "^3.1.8",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "snyk": "^1.36.2"
   },
   "scripts": {
     "start": "node src/index",
@@ -54,7 +55,9 @@
     "seed:run": "knex seed:run",
     "precommit": "lint-staged",
     "prepush": "yarn flow && CI=true yarn test:coverage",
-    "now-build": "npm run migrate:latest"
+    "now-build": "npm run migrate:latest",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "lint-staged": {
     "{src,tests}/**/*.js": [
@@ -85,5 +88,6 @@
     "engines": {
       "node": "8.x.x"
     }
-  }
+  },
+  "snyk": true
 }
