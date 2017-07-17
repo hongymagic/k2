@@ -19,7 +19,6 @@ module.exports.seed = async (knex) => {
         email,
         email_confirmed: true,
         password_hash: bcrypt.hashSync(password, 10),
-        email_confirmed: true,
       })
     )
   );
