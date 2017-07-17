@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">= 8"
+    "node": ">= 8.1.4"
   },
   "description": "Koa based API with JWT and GraphQL",
   "main": "src/index.js",
@@ -83,7 +83,7 @@
   },
   "now": {
     "engines": {
-      "node": "8.x.x"
+      "node": "8.1.4"
     }
   }
 }
