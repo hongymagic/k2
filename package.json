@@ -67,7 +67,7 @@
     "flow-bin": "^0.51.1",
     "husky": "^0.14.3",
     "jest": "^20.0.4",
-    "lint-staged": "^4.0.2",
+    "lint-staged": "^4.0.3",
     "nodemon": "^1.11.0",
     "prettier": "^1.4.4",
     "supertest": "^3.0.0"
