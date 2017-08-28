@@ -1510,9 +1510,9 @@ graphql-relay@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/graphql-relay/-/graphql-relay-0.5.2.tgz#40ff714efd60c2cd89e0bcc79e2afa6d87fa8673"
 
-graphql@^0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.10.5.tgz#c9be17ca2bdfdbd134077ffd9bbaa48b8becd298"
+graphql@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.11.1.tgz#c9f004255db946a7f5f48ada0041290b9bd02c3d"
   dependencies:
     iterall "^1.1.0"
 
