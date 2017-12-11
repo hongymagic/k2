@@ -69,7 +69,7 @@
     "jest": "^20.0.4",
     "lint-staged": "^4.0.2",
     "nodemon": "^1.11.0",
-    "prettier": "^1.4.4",
+    "prettier": "^1.9.1",
     "supertest": "^3.0.0"
   },
   "jest": {
