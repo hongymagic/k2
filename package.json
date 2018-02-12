@@ -24,7 +24,7 @@
     "graphql-relay": "^0.5.2",
     "jsonwebtoken": "^7.4.1",
     "kcors": "^2.2.1",
-    "knex": "^0.13.0",
+    "knex": "^0.14.3",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
     "koa-convert": "^1.2.0",
