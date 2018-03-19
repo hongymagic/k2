@@ -29,7 +29,7 @@
     "koa-bodyparser": "^4.2.0",
     "koa-convert": "^1.2.0",
     "koa-graphql": "^0.7.0",
-    "koa-jwt": "^3.2.2",
+    "koa-jwt": "^3.3.1",
     "koa-logger": "^3.0.0",
     "koa-passport": "^3.0.0",
     "koa-router": "^7.2.0",
